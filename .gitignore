@@ -1,0 +1,25 @@
+const int splSensor = A0;
+void setup() {
+ Serial.begin(9600);
+ pinMode(13,OUTPUT);
+ pinMode(12,OUTPUT);
+ pinMode(11,OUTPUT);
+ pinMode(10,OUTPUT);
+}
+ void loop() {
+   Serial.println(analogRead(splSensor), DEC);
+  delay(200);
+   if(analogRead(splSensor)<129){
+   for(int i = 9; i<14; i++){
+     digitalWrite(i,HIGH);
+   delay(150);
+   }
+   }
+   delay(1000);
+   digitalWrite(13,LOW);
+   digitalWrite(12,LOW);
+   digitalWrite(11,LOW);
+   digitalWrite(10,LOW);
+   }
+   
+
